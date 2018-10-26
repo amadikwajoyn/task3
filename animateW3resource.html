@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+  <html> 
+    <head>
+      <title>Animation W3resource</title>
+      <script type="text/javascript">
+      </script>
+    </head> 
+
+    <body onload="animationWord('animation')"
+      
+      <p id="animation"> W3resource </p>
+      
+      <script type="text/javascript">
+	
+        function animationWord(id){
+
+          var element = document.getElementById(id);
+          var textNode = element.childNodes[0]; 
+          var text = textNode.data;
+
+          setInterval(function (){
+            text = text[text.length - 1] + text.substring(0, text.length - 1);
+            textNode.data = text;
+          }, 100);
+        }
+
+	
+      </script>
+
+    </body> 
+  </html>
+  

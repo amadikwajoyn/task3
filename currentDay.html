@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title>The Exact Day and Time </title>
+</head>
+<body>
+      <script type="text/javascript">
+            let now = new Date(); //declaring veriable 'now' to get the new date
+            let day = now.getDay(); //declaring veriable 'day' to get the day using the getDay() method
+            let daysInWeek = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]; //declaring an array daysInWeek to store the various days of the week
+            let hour = now.getHours();   //declaring veriable 'hour' to get the current hour using the getHour() method
+            let minute = now.getMinutes(); //declaring veriable 'minutes' to get the current minutes using the getMunites() method
+            let second = now.getSeconds();  //declaring veriable 'second' to get the current seconds using the getSecond() method
+            let time = (hour >= 12)? " PM ":" AM "; //declaring veriable 'time' to in check if the hour is grater than or equal to 12 so as to assing "PM" to it else "Am" to it
+            hour = (hour >= 12)? hour - 12: hour;  //assigning the value  checking and comparing the hours whether iys grater than ot equal to 12
+            if (hour===0 && time===' AM '){            //Begining of a nested if statement, using an 'IF' statement to conside when the time is 12midnigt or 12am
+                  if (minute===0 && second===0){ 
+                        hour=12;
+                        time=' Midnight';
+                  }else{ 
+                        hour=12;
+                        time=' AM';
+                  } 
+            } 
+            if (hour===0 && time===' PM '){                 //Begining of a nested if statement, using an 'IF' statement to conside when the time is 12noon or 12 pm
+                  if (minute===0 && second===0){ 
+                        hour=12;
+                        time=' Noon';
+                  }else{ 
+                        hour=12;
+                        time=' PM';
+                  } 
+            }                 // end of the nested if statement...
+            
+            window.alert("Today is " + daysInWeek[day] + "." + "\n Current Time is "+hour + time + " : " + minute + " : " + second); // window alert or display statement.
+      </script>
+</body>
+</html>
+      

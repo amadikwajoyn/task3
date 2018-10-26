@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+		
+			<title>Calculation of the days left until next Christmas</title>
+		</head>
+  		<body>
+  			<script type="text/javascript">
+  	  			now = new Date();
+				let christmas = new Date(now.getFullYear(), 11, 25);
+				if (now.getMonth()==11 && now.getDate()>25){
+					christmas.setFullYear(christmas.getFullYear()+1); 
+				}  
+				let newday=1000*60*60*24;
+				window.alert(Math.ceil((christmas.getTime()-now.getTime())/(newday))+ " days left until Christmas!");
+			</script>
+		</body>
+  	</html>
